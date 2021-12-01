@@ -13,6 +13,7 @@ let pageMap = (e) =>{
       description: e.description,
       platforms: e.platforms.map((e) => e.platform.name),
       image: e.background_image,
+      createdInDb: e.createdInDb = false,
     id: e.id,
   };
   }

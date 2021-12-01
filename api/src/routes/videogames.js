@@ -17,9 +17,16 @@ router.get("/", async (req, res) => {
         where: {
           name: {
             [Op.iLike]: `%${name}%`
-          }
+          }, 
+        },  
+        attributes: {
+          exclude: ["createdAt", "updatedAt"] 
         },
-        include: [Genres]
+        include: {
+          model: Genres,
+          attributes:["name", "id"],
+          through: { attributes: [] },
+          }
       })
       let resp = await axios.get(
         `https://api.rawg.io/api/games?key=${YOUR_API_KEY}&search=${name}`
@@ -72,7 +79,16 @@ router.get("/", async (req, res) => {
         return videogames.push(p5);
       });
 
-      let dbVg = await Videogame.findAll({include:[Genres]});
+      let dbVg = await Videogame.findAll({
+        attributes:{
+          exclude: ["updatedAt", "createdAt"]
+        },
+        include: {
+        model: Genres,
+        attributes:["name", "id"],
+        through: { attributes: [] },
+        }
+      });
 
       const vgConcatenated = dbVg.concat(videogames);
       res.json(vgConcatenated);
