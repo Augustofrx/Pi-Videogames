@@ -1,0 +1,21 @@
+.landing {
+    background-image: url('C:\Users\augus\OneDrive\Escritorio\PI-Videogames-main\client\src\components\Images\LandingPage.png');
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ButtonStart {
+    font-size: 20px;
+   margin-top: 319px;
+   margin-right: 155px;
+   width: 120px;
+   height: 25px;
+   background-color: rgb(255, 0, 128);
+   color: rgb(255, 235, 235);
+   text-decoration-line: none;
+   border-color:transparent;
+}
