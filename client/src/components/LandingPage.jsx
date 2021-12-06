@@ -8,6 +8,7 @@ export default function LandingPage() {
          <button className={style.ButtonStart}>
              Start
          </button>
+         
      </Link>
     </div>
   );

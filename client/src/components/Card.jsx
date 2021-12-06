@@ -1,11 +1,16 @@
 import React from "react";
-
-export default function Card({name, image, genres}) {
-    return (
-        <div>
-            <img src={image} alt="img not found" width='200px' height='200px'/>
-            <h3>{name}</h3>
-            <h5>{genres.map(genre => <h5>{genre.name}</h5>)}</h5>
-        </div>
-    )
+import style from "../components/Home.module.css";
+import { Link } from "react-router-dom";
+export default function Card({ name, image, genres }) {
+  return (
+    <div className={style.Card}>
+      <img src={image} alt="img not found" />
+      <h4>{name}</h4>
+      <div className={style.genres}>
+        {genres.map((genre) => (
+          <span key={genre.id}>{genre.name} </span>
+        ))}
+      </div>
+    </div>
+  );
 }

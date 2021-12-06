@@ -24,6 +24,7 @@ router.get("/", async (req, res) => {
         },
         include: {
           model: Genres,
+          as: "genres",
           attributes:["name", "id"],
           through: { attributes: [] },
           }
@@ -36,7 +37,10 @@ router.get("/", async (req, res) => {
           videogames.push(resp.data.results[i]);
         }
       }
-      let vgToSend = dbVideogame.concat(videogames).slice(0, 15);
+      let videogamesMap = videogames.map((e) =>{
+        return pageMap(e)
+      })
+      let vgToSend = dbVideogame.concat(videogamesMap).slice(0, 15);
       res.send(vgToSend);
     } else {
       let resp = await axios.get(
@@ -58,21 +62,21 @@ router.get("/", async (req, res) => {
         return videogames.push(p2);
       });
 
-      const resp3 = await axios.get(resp.data.next);
+      const resp3 = await axios.get(resp2.data.next);
       let respLimited3 = resp3.data.results;
       respLimited3.map((e) => {
         let p3 = pageMap(e);
         return videogames.push(p3);
       });
 
-      const resp4 = await axios.get(resp.data.next);
+      const resp4 = await axios.get(resp3.data.next);
       let respLimited4 = resp4.data.results;
       respLimited4.map((e) => {
         let p4 = pageMap(e)
         return videogames.push(p4);
       });
 
-      const resp5 = await axios.get(resp.data.next);
+      const resp5 = await axios.get(resp4.data.next);
       let respLimited5 = resp5.data.results;
       respLimited5.map((e) => {
         let p5 = pageMap(e);
@@ -85,6 +89,7 @@ router.get("/", async (req, res) => {
         },
         include: {
         model: Genres,
+        as: "genres",
         attributes:["name", "id"],
         through: { attributes: [] },
         }

@@ -28,7 +28,7 @@ module.exports = (sequelize) => {
       allowNull: true,
     },
     platforms: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.ARRAY(DataTypes.JSON),
       allowNull: false,
     },
     createdInDb : {
@@ -44,7 +44,7 @@ module.exports = (sequelize) => {
       set(value) {
         if(value === '') {
         this.setDataValue('image',
-        'https://screencraft.org/wp-content/uploads/2021/08/Write-for-Video-Games-1024x576.jpg' )
+        'https://screencraft.org/wp-content/uploads/2021/08/Write-for-Video-Games-1024x576.jpg')
         } else {
         this.setDataValue('image', value);
         }

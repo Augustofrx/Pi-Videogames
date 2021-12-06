@@ -9,13 +9,28 @@
 }
 
 .ButtonStart {
-    font-size: 20px;
-   margin-top: 319px;
-   margin-right: 155px;
-   width: 120px;
-   height: 25px;
-   background-color: rgb(255, 0, 128);
+    position:absolute;
+    top: 315px;
+    left: 540px;
+    width: 130px;
+    font-size: 22px;
+    font-family:monospace;
+    font-weight: 700;
+   background-color: rgb(255, 0, 60);
    color: rgb(255, 235, 235);
    text-decoration-line: none;
    border-color:transparent;
+   transition: 0.3s;
+   border-radius: 4px;
+
 }
+ .ButtonStart:hover{
+     background-color:rgb(255, 0, 60);
+     box-shadow: 0 0 3px rgb(255, 0, 60),
+                 0 0 6px rgb(255, 0, 60),
+                 0 0 15px rgb(255, 0, 60),
+                 0 0 30px rgb(255, 0, 60);
+                 cursor: pointer;
+                
+
+ }

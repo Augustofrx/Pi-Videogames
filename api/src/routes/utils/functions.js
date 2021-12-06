@@ -11,7 +11,7 @@ let pageMap = (e) =>{
       released: e.released,
       rating: e.rating,
       description: e.description,
-      platforms: e.platforms.map((e) => e.platform.name),
+      platforms: e.platforms.map((e) =>  e.platform.name),
       image: e.background_image,
       createdInDb: e.createdInDb = false,
     id: e.id,

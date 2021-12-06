@@ -44,8 +44,8 @@ const findGenres = async () => {
   };
   
   router.get("/", async (req, res) => {
-    const allGenres = await findGenres();
-    res.json(allGenres);
+    const {genres} = await findGenres();
+    res.json(genres);
   });
 
   module.exports = router;

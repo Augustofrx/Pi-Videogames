@@ -11,6 +11,7 @@ const gameInDb = async () => {
       return await Videogame.findAll({
         include: {
           model: Genres,
+          as: "genres",
           attributes: ['name'],
           trougth: {
             attributes: []
@@ -36,11 +37,11 @@ const gameInDb = async () => {
       res.json( {
         id: allId.data.id,
         name: allId.data.name,
-        image: allId.data.name,
+        image: allId.data.background_image,
         description: allId.data.description,
         released: allId.data.released,
         rating: allId.data.rating,
-        platforms: allId.data.platforms.map((e) => e.platform.name),
+        platforms: allId.data.platforms.map((e) =>  e.platform.name),
         genres: allId.data.genres.map((e) => {
           return {
               id: e.id,
@@ -58,7 +59,7 @@ const gameInDb = async () => {
         released,
         rating,
         platforms,
-        genre,
+        genres,
         createdInDb,
       } = req.body
   
@@ -72,7 +73,7 @@ const gameInDb = async () => {
       })
   
       let genresInDb = await Genres.findAll({
-        where: {name: genre},
+        where: {name: genres},
         attributes: {
           exclude: ["createdAt", "updatedAt"],
         }
