@@ -1,0 +1,44 @@
+.Card {
+    position: relative;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(rgb(95, 0, 0), rgb(0, 0, 0));
+    width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    margin: 12px;
+    border-radius: 5px;
+    border-style:solid;
+    border-color:rgb(95, 0, 0);
+    transition: 0.4s;
+}
+.Card:hover {
+    box-shadow: 0 0 10px rgb(100, 10, 10),
+                 0 0 20px rgb(255, 123, 0),
+                 0 0 30px rgb(255, 0, 200),
+                 0 0 40px rgb(98, 0, 255);
+                    transform: translate3d(0.1ch, 0.1in, 7em);
+                    background: linear-gradient(rgba(95, 0, 0, 0.6), rgb(0, 0, 0, 0.6));
+                    color: rgba(255, 255, 255, 0.5);
+                    
+} 
+
+
+.Card img {
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2px;
+    width:250px;
+     height:200px;
+}
+
+.genres {
+    padding: 2px;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,0,60,1) 50%, rgba(0,0,0,1) 100%);
+    word-spacing: 2px;
+    letter-spacing: 1px;
+}
+.imgs {
+    overflow: hidden;
+}
+

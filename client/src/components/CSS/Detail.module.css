@@ -1,0 +1,162 @@
+.container {
+  height: 100vh;
+}
+.generalDiv {
+  width: 100%;
+}
+.titleDiv {
+  position: relative;
+  top: 20px;
+  width: 980px;
+  left: 200px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px black;
+}
+
+.title {
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+}
+
+.genresDiv {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  color: rgb(255, 255, 255);
+  width: 1000px;
+  top: 50px;
+  left: 200px;
+  font-size: 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 3px black;
+}
+.genresWords {
+  margin: 10px;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+}
+.platformsDiv {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-size: 10px;
+  width: 1000px;
+  top: 70px;
+  left: 200px;
+  box-shadow: 2px 2px 3px black;
+}
+.platformsWords {
+  margin: 10px;
+}
+
+.descriptionDiv {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  top: 100px;
+  left: 200px;
+  width: 1000px;
+  height: 100%;
+  font-size: 16px;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 3px black;
+}
+
+.descriptionWords {
+  padding: 20px 20px;
+}
+
+.releasedDiv {
+  position: relative;
+  top: 110px;
+  left: 200px;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.5);
+  width: 200px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 3px black;
+}
+
+.ratingDiv {
+  position: relative;
+  top: 80px;
+  left: 625px;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.5);
+  width: 200px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 3px black;
+}
+
+.ratingNumbers {
+}
+
+.backgroundBlur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vw;
+  opacity: 40%;
+  z-index: -1;
+}
+
+.onTopImg {
+  position: relative;
+   object-fit: cover;
+    object-position: center;
+  right: 0px;
+  top: 25px;
+  width: 500px;
+  height: 500px;
+  border-radius: 9999px;
+  box-shadow: 2px 2px 10px rgb(0, 0, 0);
+  z-index: 1;
+}
+
+.GoBackButton {
+  position: relative;
+  border-style: none;
+  background: rgb(112, 0, 163);
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  height: 30px;
+  width: 150px;
+  box-shadow: 2px 2px 3px black;
+}
+
+.GoBackButton:hover {
+  background: rgb(71, 1, 104);
+  color: tomato;
+}
+
+.goBackDiv {
+  position: relative;
+  top: 50px;
+  left: 1045px;
+  width: 160px;
+}
+
+.loadersGeneral {
+  background:rgb(71, 1, 104);
+}
+.megaman {
+  position: relative;
+  top: 50px;
+}

@@ -1,0 +1,18 @@
+.numbers { 
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    color: brown;
+    width: 35px;
+    padding: 8px;
+    margin: 4px;
+    top: -5px;
+    right: 5px;
+    border-style:solid;
+    border-color:brown;
+    border-radius: 5px;   
+}
+
+.numbers:focus {
+    background-color: rgba(63, 63, 63, 0.233);
+    color: burlywood;
+}

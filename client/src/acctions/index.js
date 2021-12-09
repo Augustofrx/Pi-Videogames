@@ -2,17 +2,27 @@ import axios from "axios";
 
 export function getAllVideogames() {
   return async function (dispatch) {
-    let json = await axios.get("http://localhost:3001/videogames", []);
+    dispatch({
+      type: 'GET_INIT'
+    })
+    try {
+      let json = await axios.get("http://localhost:3001/videogames", []);
     dispatch({
       type: "GET_VIDEOGAMES",
       payload: json.data,
     });
+  } catch (error) {
+    console.log("Videogames not found")
+  }
   };
 }
 
 export function getVideogamesName(name) {
   return async function (dispatch) {
     try {
+      dispatch({
+        type: 'GET_INIT'
+      })
       let json = await axios.get(
         "http://localhost:3001/videogames?name=" + name
       );
@@ -21,40 +31,54 @@ export function getVideogamesName(name) {
         payload: json.data,
       });
     } catch (error) {
-      console.log(error);
+      console.log("Videogame name not exist");
     }
   };
 }
 
 export function getGenres() {
   return async function (dispatch) {
-    let info = await axios.get("http://localhost:3001/genres");
+    try {
+      let info = await axios.get("http://localhost:3001/genres");
     dispatch({
       type: "GET_GENRES",
       payload: info.data,
     });
-  };
+  } catch (error) {
+console.log("Genres not found")
+  }
 }
-
+}
 export function getDetails(id) {
   return async function (dispatch) {
     try {
-      let json = await axios.get("http://localhost:3001/characters/" + id);
+      let json = await axios.get("http://localhost:3001/videogame/" + id);
       dispatch({
         type: "GET_DETAILS",
-        payload: json.data,
+        payload: json.data
       });
     } catch (error) {
-      console.log(error);
+      console.log("Videogame id not exist");
     }
   };
 }
 
+export function resetDetail() {
+  return {
+    type: "RESET_DETAIL"
+  }
+}
+
+
 export function postVideogame(payload) {
-  return async function () {
+  try {return async function () {
     let json = await axios.post("http://localhost:3001/videogame", payload);
     return json;
-  };
+  }
+}catch (error) {
+  console.log("Can't process post method")
+}
+
 }
 
 export function alphabeticalOrder(payload) {

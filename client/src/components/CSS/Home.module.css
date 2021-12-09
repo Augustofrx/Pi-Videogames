@@ -1,0 +1,138 @@
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    column-gap: 50px;
+    grid-row-gap: 30px;
+    justify-content: space-evenly;
+    justify-content: center;
+    align-content: space-evenly;
+    align-items: center;
+    margin-left: 100px;
+   
+   
+}
+.filtersCss {
+    display: flex;
+    justify-content: center;
+}
+
+.Home {
+    background: rgb(20, 0, 32);
+    position: relative;
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.nav {
+    background: linear-gradient(-180deg, rgba(7,7,36,1) 10%, rgb(95, 0, 0) 100%);
+    margin-bottom: 10px;
+    height: 110px;
+}
+
+.alphabeticalOrder {
+position: relative;
+top: 70px;
+margin-right: 4px;
+right: 5px;
+}
+
+.OrderByRating {
+    position: relative;
+    top: 70px;
+    margin-right: 4px;
+    right: 5px;
+}
+
+.filterByGenres {
+    position: relative;
+    top: 70px;
+    margin-right: 4px;
+    right: 5px;
+}
+
+.filterByOrigin {
+    position: relative;
+    top: 70px;
+    right: 5px;
+}
+.labels {
+    color: white;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.selects {
+    border-radius: 5px;
+    border-color: rgb(68, 0, 6);
+    width: 88px;
+    background-color: rgba(255,0,60,1);
+    color: seashell;
+    font-weight: 700;
+}
+
+.LoaderGifMegaman {
+   position: relative;
+   top: 80px;
+   left: 0px;
+}
+
+.LoaderGif {
+    position: relative;
+    top: -50px;
+    left: 0px;
+}
+.createVideogame {
+    position: absolute;
+    left: 1000px;
+    top: 25px;
+    word-spacing: 5px;
+}
+.createVideogame a {
+    font-family: monospace;
+    color: snow;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    background-color: rgba(255,0,60,1);
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,1);
+}
+
+.createVideogame:hover a {
+    background-color: rgba(255, 0, 60, 0.548);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: rgb(20, 0, 32) ;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(180, 180, 180, 0.2);
+}
+
+.noResultsDiv {
+    position: relative;
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-position: center;
+width: auto;
+height: 100vh;
+    color: azure;
+}
+
+.noResultsDiv h3 {
+    position: relative;
+    left: 370px;
+    top: 100px;
+}
+
+.sadCatGif {
+    position: relative;
+    left: 360px;
+    top: 100px;
+}

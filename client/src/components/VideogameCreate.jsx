@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { postVideogame, getGenres } from "../acctions";
 import { useDispatch, useSelector } from "react-redux";
+import style from './CSS/VideogameCreate.module.css'
+
 
 export default function VideogameCreate() {
   const dispatch = useDispatch();
@@ -15,17 +17,12 @@ export default function VideogameCreate() {
     );
     platforms = Array.from(new Set(platforms.map(e => e)))
   }
-  //let hash = {};
-  //let platforms = platformsDisordered.filter((o) =>
-  // hash[o.name] ? false : (hash[o.name] = true)
-  // );
   
   const [input, setInput] = useState({
     name: "",
     description: "",
     released: "",
     rating: "",
-    image: "",
     genres: [],
     platforms: [],
 });
@@ -54,13 +51,12 @@ function handleSelectPlatforms(e) {
 function handleSubmit(e) {
     e.preventDefault();
     dispatch(postVideogame(input));
-    alert("Videogame created successfuly =)");
+    alert("Videogame created successfully");
     setInput({
       name: "",
       description: "",
       released: "",
       rating: "",
-      image: "",
       genres: [],
       platforms: [],
     });
@@ -81,98 +77,99 @@ function handleDeletePlatforms(e) {
 }
   useEffect(() => {
     dispatch(getGenres());
-  }, []);
+  }, [dispatch]);
   return (
-    <div>
-      <Link to="/home">
-        <button>Back to Home</button>
+    <div className={style.General}>
+      <Link to="/home" className={style.BackToHomeDiv}>
+        <button className={style.BackToHomeButton}>Back to Home</button>
       </Link>
-      <h1>Create your videogame!</h1>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <div>
+      <div className={style.transparentForm}>
+      <h1 className={style.title}>Create your videogame!</h1>
+      <form  className={style.form}onSubmit={(e) => handleSubmit(e)}>
+        <div className={style.nameDiv}>
          
-          <input
+          <input className={style.nameInput}
           placeholder="Name"
             type="text"
             value={input.name}
             name="name"
             onChange={(e) => handleChange(e)}
+            required
           />
         </div>
-        <div>
+        <div className={style.descriptionDiv}>
 
-          <input
+          <input className={style.descriptionInput}
             type="text"
             placeholder="Description"
             value={input.description}
             name="description"
             onChange={(e) => handleChange(e)}
+            required
           />
         </div>
-        <div>
+        <div className={style.dateDiv}>
 
-          <input
-          
+          <input className={style.dateInput}
+          required
+          max="today"
             type="Date"
             value={input.released}
             name="released"
             onChange={(e) => handleChange(e)}
           />
         </div>
-        <div>
+        <div className={style.ratingDiv}>
 
-          <input
+          <input className={style.ratingInput}
           placeholder="Rating"
-            type="number"
+          title="Debe ingresar un número entre 1 y 5"
+          id="Rating"  
+          type="number"
             value={input.rating}
-            min="0"
+            min="1"
             max="5"
             name="rating"
             onChange={(e) => handleChange(e)}
+            required
           />
         </div>
-        <div>
-
-          <input
-          placeholder="Url Image"
-            type="text"
-            value={input.image}
-            name="image"
-            onChange={(e) => handleChange(e)}
-          />
-        </div>
-        <label>Genres: </label>
-        <select
+        <label className={style.labelGenres}>Genres: </label>
+        <select required className={style.selectGenres}
         onChange={(e) => handleSelectGenres(e)}>
+         <option key="empty1"></option>
           {genres.map((genre) => (
-            <option
+            <option key={genre.id} required
             value={genre.name}>{genre.name}</option>
             ))}
         </select>
-        <label>Platforms: </label>
-        <select onChange={(e) => handleSelectPlatforms(e)}>
-          {platforms.map((platform) => (
-            <option value={platform}>{platform}</option>
+        <label className={style.labelPlatforms}>Platforms: </label>
+        <select required className={style.selectPlatforms} onChange={(e) => handleSelectPlatforms(e)}>
+          <option key="empty2"></option>
+          {platforms.map((platform, index) => (
+            <option key={index} value={platform} required>{platform}</option>
             ))}
         </select>
-            <button type="submit">Done</button>
+            <button className={style.buttonDone} type="submit">Done</button>
       </form>
-       <h5>
+       <div className={style.divRenderGenres}>
             {input.genres.map((e) => (
-          <div>
+         <div>
             {e + " "}
-            <button className="ButtonX" onClick={() => handleDeleteGenres(e)}>x</button>
+            <button  key="btnXgenres"className={style.buttonXgenres} onClick={() => handleDeleteGenres(e)}>x</button>
           </div>
+
             ))}
-            </h5>
-            <h5>
+            </div>
+            <div className={style.divRenderPlatforms}>
               {input.platforms.map((e) => (
           <div>
             {e + " "}
-            <button className="ButtonX" onClick={() => handleDeletePlatforms(e)}>x</button>
+            <button key="btnXPlatforms"className={style.buttonXplatforms} onClick={() => handleDeletePlatforms(e)}>x</button>
           </div>
             ))}
-          </h5>
+          </div>
+      </div>
     </div>
   );
 }

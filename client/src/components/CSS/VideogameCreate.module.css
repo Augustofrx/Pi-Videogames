@@ -1,0 +1,231 @@
+
+.General {
+    position: absolute;
+    background:linear-gradient(-180deg, rgba(7,7,36,1) 0%, rgb(95, 0, 0) 50%, rgba(7,7,36,1) 100%);
+    height: 663px;
+    width: 1366px;
+}
+
+.title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 60px;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+}
+
+
+.transparentForm {
+    background-color: rgba(255, 255, 255, 0.137);
+    width: 620px;
+    height: 520px;
+    position: absolute;
+    top: 80px;
+    left: 400px;
+    border-radius: 50px;
+}
+
+.BackToHomeDiv {
+    position: relative;
+    right: 550px;
+    top: 20px;
+}
+
+.BackToHomeButton {
+    padding: 8px;
+    border-radius: 6px;
+    border-style:none;
+    font-size: 15px;
+    color:rgb(255, 255, 255);
+    font-weight: 700;
+    background-color: rgba(255,0,60,1);
+    box-shadow: 5px 5px 5px black;
+}
+
+.BackToHomeButton:hover {
+    background-color: rgb(143, 0, 199); 
+}
+
+.nameDiv {
+position: relative;
+top: -30px
+}
+
+.nameInput{
+    border-radius: 5px;
+    border: none;
+    width: 300px;
+    height: 20px;
+    margin-bottom: 10px;
+    text-align-last: center;
+    box-shadow: inset 2px 2px 5px black;
+}
+
+.descriptionDiv {
+    position: relative;
+    top: -30px
+    }
+
+.descriptionInput {
+    border-radius: 5px;
+    border: none;
+    width: 300px;
+    height: 20px;
+    margin-bottom: 6px; 
+    text-align-last: center;
+    box-shadow: inset 2px 2px 5px black;
+}
+.dateDiv {
+    position: relative;
+    top: -30px
+    }
+
+.dateInput {
+    border-radius: 5px;
+    border: none;
+    width: 302px;
+    height: 22px;
+    margin-bottom: 9px;  
+    text-align-last:center;
+    box-shadow: inset 2px 2px 5px black;
+}
+.ratingDiv {
+position: relative;
+top: -30px
+}
+.ratingInput {
+    border-radius: 5px;
+    border: none;
+    width: 300px;
+    height: 20px;
+    margin-bottom: 10px; 
+    text-align-last: center;
+    box-shadow: inset 2px 2px 5px black;
+}
+.imageDiv {
+    position: relative;
+    top: -30px
+    }
+.imageInput {
+    border-radius: 5px;
+    border: none;
+    width: 300px;
+    height: 20px;
+    margin-bottom: 10px;  
+    text-align-last: center;
+    box-shadow: inset 2px 2px 5px black;
+}
+
+.labelGenres {
+color: white;
+font-weight: bold;
+position: absolute;
+bottom: 183px;
+left: 158px;
+}
+
+.labelPlatforms {
+    position: absolute;
+    font-weight: bold;
+bottom: 183px;
+left: 295px;
+color:white;
+}
+
+.selectGenres {
+    background-color: rgba(255,0,60,1); 
+    color: white;
+    font-weight: bold;
+    position: relative;
+    bottom: 30px;
+    right: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 80px;
+    height: 20px;
+    margin-bottom: 10px;  
+    text-align-last: center;
+    box-shadow: inset 2px 2px 5px black;
+}
+
+.selectPlatforms {
+    background-color: rgba(255,0,60,1); 
+    color: white;
+    font-weight: bold;
+    position: relative;
+    bottom: 30px;
+    left: 68px;
+    border-radius: 5px;
+    border: none;
+    width: 90px;
+    height: 20px;
+    margin-bottom: 10px;  
+    text-align-last: center;
+    box-shadow: inset 2px 2px 5px black;
+}
+
+.divRenderGenres {
+    position: relative;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+.divRenderPlatforms {
+    display: flex;
+    position: relative;
+    bottom: 20px;
+    justify-content: center; 
+    color: white;
+    font-weight: 600; 
+}
+
+.buttonXgenres{
+    position: relative;
+    right: 2px;
+    height: 20px;
+    border-radius: 5px;
+    border-style: none;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgba(255,0,60,1); 
+    background-color: thistle;
+    text-align-last: auto;
+}
+.buttonXplatforms {
+    position: relative;
+    right: 2px;
+    height: 20px;
+    border-radius: 5px;
+    border-style: none;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgba(255,0,60,1); 
+    background-color: thistle;
+    text-align-last: auto;
+}
+.buttonXplatforms:hover {
+    background-color: rgba(216, 191, 216, 0.507);
+}
+.buttonXgenres:hover {
+    background-color: rgba(216, 191, 216, 0.507);
+}
+
+.buttonDone{
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+    width: 100px;
+    height: 50px;
+    padding: 8px;
+    border-radius: 20px;
+    border-style:none;
+    font-size: 15px;
+    color:rgb(255, 255, 255);
+    font-weight: 700;
+    background-color: rgba(255,0,60,1);
+    box-shadow: 5px 5px 5px black;
+}
+.buttonDone:hover {
+    background-color: rgb(143, 0, 199); 
+}

@@ -6,18 +6,19 @@ const { YOUR_API_KEY } = process.env;
 const { Genres, Videogame } = require("../db");
 
 
-const gameInDb = async () => {
+const gameInDb = async (id) => {
     try {
-      return await Videogame.findAll({
-        include: {
-          model: Genres,
-          as: "genres",
-          attributes: ['name'],
-          trougth: {
-            attributes: []
-          }
-        }
-      })
+       return await Videogame.findByPk(id, {
+				attributes: {
+					exclude: ['createdAt', 'updatedAt'],
+				},
+				include: {
+					model: Genres,
+					as: 'genres',
+					attributes: ['id', 'name'],
+					through: { attributes: [] },
+				},
+			});
     }
     catch(error) {
       return error
@@ -27,9 +28,9 @@ const gameInDb = async () => {
   router.get(`/:idVideogame`, async (req, res) => {
       const { idVideogame } = req.params;
     if (idVideogame.includes("-") && typeof idVideogame === "string") {
-      let gameAskDb = await gameInDb();
-      let gameFilterId = await gameAskDb.filter( gId => gId.id === idVideogame) 
-      return res.status(200).json(gameFilterId)
+      let gameAskDb = await gameInDb(idVideogame);
+      //let gameFilterId = await gameAskDb.filter( gId => gId.id === idVideogame) 
+      return res.status(200).json(gameAskDb)
     } else {
       const allId = await axios.get(
         `https://api.rawg.io/api/games/${idVideogame}?key=${YOUR_API_KEY}`
