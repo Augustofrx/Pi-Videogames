@@ -19,14 +19,16 @@ export default function SearchBar() {
     } 
  return (
      <div className={style.GeneralSearch}>
-         <form onSubmit={handleSubmit}>
+         <form onSubmit={handleSubmit} autoComplete="off">
          <input 
          className={style.SearchInput}
          type="text" 
          name='search'
+         id='Search'
          value={name}
          placeholder='Search a videogame'
          onChange={handleInputChange}/>
+         <button className={style.buttonSearch}>Search</button>
          </form>
      </div>
  )

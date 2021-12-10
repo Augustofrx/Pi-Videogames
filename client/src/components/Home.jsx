@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getAllVideogames,
+  getGenres,
   filterByGenres,
   filterByOrigin,
   alphabeticalOrder,
@@ -20,6 +21,7 @@ import sadCat from './Images/sadCat.gif'
 export default function Home() {
   const dispatch = useDispatch();
   const allVideogames = useSelector((state) => state.videogames);
+  const genres = useSelector((state) => state.genres)
   const isLoading = useSelector((state) => state.loading);
   const [order, setOrder] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -57,13 +59,21 @@ export default function Home() {
     dispatch(filterByOrigin(e.target.value));
   }
 
+  function handleResetsFilters() {
+    dispatch(getAllVideogames());
+  }
+
   useEffect(() => {
     if (!allVideogames.length) {
       dispatch(getAllVideogames());
     } 
-      ////  --->esto permite eliminar los warning de dependencias !
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getGenres());
+  }, [dispatch]);
+
 
   window.scrollTo(0, 0);
 
@@ -72,7 +82,12 @@ export default function Home() {
       <nav className={style.nav}>
         <SearchBar />
         <div className={style.createVideogame}>
-          <Link to="/videogame">Create a videogame</Link>
+          <Link key='create' to="/videogame">Create a videogame</Link>
+        </div>
+        <div className={style.divReset}>
+            <button className={style.buttonReset} onClick={e => handleResetsFilters(e)}>
+              Reset Search
+            </button>
         </div>
         <div className={style.filtersCss}>
           <div className={style.alphabeticalOrder}>
@@ -80,7 +95,7 @@ export default function Home() {
             <select
               className={style.selects}
               onChange={(e) => handleAlphabeticalOrder(e)}
-            >
+            > <option value="None">None</option>
               <option value="AZ">A-Z</option>
               <option value="ZA">Z-A</option>
             </select>
@@ -90,7 +105,7 @@ export default function Home() {
             <select
               className={style.selects}
               onChange={(e) => handleOrderByRating(e)}
-            >
+            > <option value="None">None</option>
               <option value="Rating++">Rating++</option>
               <option value="Rating--">Rating--</option>
             </select>
@@ -102,27 +117,10 @@ export default function Home() {
               onChange={(e) => handleFilterByGenre(e)}
             >
               <option value="All">All</option>
-              <option value="Action">Action</option>
-              <option value="Indie">Indie</option>
-              <option value="Adventure">Adventure</option>
-              <option value="RPG">RPG</option>
-              <option value="Strategy">Strategy</option>
-              <option value="Shooter">Shooter</option>
-              <option value="Casual">Casual</option>
-              <option value="Simulation">Simulation</option>
-              <option value="Puzzle">Puzzle</option>
-              <option value="Arcade">Arcade</option>
-              <option value="Platformer">Platformer</option>
-              <option value="Racing">Racing</option>
-              <option value="Massively Multiplayer">
-                Massively Multiplayer
-              </option>
-              <option value="Sports">Sports</option>
-              <option value="Fighting">Fighting</option>
-              <option value="Board Games">Board Games</option>
-              <option value="Educational">Educational</option>
-              <option value="Card">Card</option>
-              <option value="Family">Family</option>
+              {genres.map((genre) => (
+            <option key={genre.id} required
+            value={genre.name}>{genre.name}</option>
+            ))}
             </select>
           </div>
           <div className={style.filterByOrigin}>

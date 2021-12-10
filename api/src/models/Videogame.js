@@ -41,14 +41,8 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
       defaultValue: 'https://screencraft.org/wp-content/uploads/2021/08/Write-for-Video-Games-1024x576.jpg',
-      set(value) {
-        if(value === '') {
-        this.setDataValue('image',
-        'https://screencraft.org/wp-content/uploads/2021/08/Write-for-Video-Games-1024x576.jpg')
-        } else {
-        this.setDataValue('image', value);
-        }
-      }
     },
   });
 };
+
+

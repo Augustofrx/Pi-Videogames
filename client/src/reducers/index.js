@@ -49,40 +49,68 @@ function rootReducer(state = initialState, action) {
 
       };
     case "ALPHABETICAL_ORDER":
-      let sortedArr =
-        action.payload === "AZ"
-          ? state.videogames.sort(function (a, b) {
-              if (a.name > b.name) return 1;
-              if (b.name > a.name) return -1;
-              return 0;
-            })
-          : state.videogames.sort(function (a, b) {
-              if (a.name > b.name) return -1;
-              if (b.name > a.name) return 1;
-              return 0;
-            });
-      return {
-        ...state,
-        videogames: sortedArr,
-      };
-    case "ORDER_BY_RATING":
-      let sortedRatingArr =
-        action.payload === "Rating++"
-          ? state.videogames.sort(function (a, b) {
-              if (a.rating > b.rating) return -1;
-              if (b.rating > a.rating) return 1;
-              return 0;
-            })
-          : state.videogames.sort(function (a, b) {
-              if (a.rating > b.rating) return 1;
-              if (b.rating > a.rating) return -1;
-              return 0;
-            });
-      return {
-        ...state,
-        videogames: sortedRatingArr,
-      };
+     let alphabeticalOrder = [...state.allVideogames]
+     switch(action.payload) {
+       case "AZ": 
+       return {
+         ...state,
+         videogames: alphabeticalOrder.sort((a, b) => {
+           if(a.name > b.name) return 1;
+           if(a.name < b.name) return -1;
+           return 0
+         })
+       };
+       case "ZA":
+         return {
+           ...state,
+           videogames: alphabeticalOrder.sort((a, b) => {
+            if(a.name > b.name) return -1;
+            if(a.name < b.name) return 1;
+            return 0
+         })
+        }
+        case "None":
+          return {
+            ...state,
+            videogames: [...state.allVideogames]
+          }
+          default:
+          return {
+            ...state
+          }
+     }
 
+    case "ORDER_BY_RATING":
+    let orderByRating = [...state.allVideogames]
+    switch(action.payload) {
+      case "Rating++": 
+      return {
+        ...state,
+        videogames: orderByRating.sort((a, b) => {
+          if(a.name > b.name) return 1;
+          if(a.name < b.name) return -1;
+          return 0
+        })
+      };
+      case "Rating--":
+        return {
+          ...state,
+          videogames: orderByRating.sort((a, b) => {
+           if(a.name > b.name) return -1;
+           if(a.name < b.name) return 1;
+           return 0
+        })
+       }
+       case "None":
+         return {
+           ...state,
+           videogames: [...state.allVideogames]
+         }
+         default:
+         return {
+           ...state
+         }
+        }
     case "FILTER_BY_GENRES":
       const AllVideogames = state.allVideogames;
       const genresFiltered =
@@ -97,6 +125,7 @@ function rootReducer(state = initialState, action) {
         ...state,
         videogames: genresFiltered,
       };
+      
     case "FILTER_BY_ORIGIN":
       const AllVideogames2 = state.allVideogames;
       const filterByOrigin =

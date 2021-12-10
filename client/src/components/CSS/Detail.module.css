@@ -90,7 +90,7 @@
 .ratingDiv {
   position: relative;
   top: 80px;
-  left: 625px;
+  left: 598px;
   color: rgb(255, 255, 255);
   border-radius: 5px;
   background: rgba(0, 0, 0, 0.5);
@@ -102,8 +102,7 @@
   box-shadow: 2px 2px 3px black;
 }
 
-.ratingNumbers {
-}
+
 
 .backgroundBlur {
   position: absolute;

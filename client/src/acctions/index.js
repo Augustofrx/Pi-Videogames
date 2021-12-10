@@ -12,7 +12,7 @@ export function getAllVideogames() {
       payload: json.data,
     });
   } catch (error) {
-    console.log("Videogames not found")
+    console.log(error)
   }
   };
 }
@@ -31,7 +31,7 @@ export function getVideogamesName(name) {
         payload: json.data,
       });
     } catch (error) {
-      console.log("Videogame name not exist");
+      console.log(error);
     }
   };
 }
@@ -45,7 +45,7 @@ export function getGenres() {
       payload: info.data,
     });
   } catch (error) {
-console.log("Genres not found")
+console.log(error)
   }
 }
 }
@@ -58,7 +58,7 @@ export function getDetails(id) {
         payload: json.data
       });
     } catch (error) {
-      console.log("Videogame id not exist");
+      console.log(error);
     }
   };
 }
@@ -71,14 +71,10 @@ export function resetDetail() {
 
 
 export function postVideogame(payload) {
-  try {return async function () {
+    return async function () {
     let json = await axios.post("http://localhost:3001/videogame", payload);
     return json;
   }
-}catch (error) {
-  console.log("Can't process post method")
-}
-
 }
 
 export function alphabeticalOrder(payload) {
@@ -106,3 +102,4 @@ export function filterByOrigin(payload) {
     payload,
   };
 }
+
