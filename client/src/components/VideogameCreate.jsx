@@ -26,7 +26,10 @@ export default function VideogameCreate() {
     platforms: [],
   });
 
+  
+
   function handleChange(e) {
+    
     setInput({
       ...input,
       [e.target.name]: e.target.value,
@@ -38,7 +41,7 @@ export default function VideogameCreate() {
       genres: [...input.genres, e.target.value],
     });
   }
-
+  
   function handleSelectPlatforms(e) {
     setInput({
       ...input,
@@ -68,6 +71,7 @@ export default function VideogameCreate() {
       genres: input.genres.filter((genre) => genre !== e),
     });
   }
+  
   function handleDeletePlatforms(e) {
     setInput({
       ...input,
@@ -188,9 +192,11 @@ export default function VideogameCreate() {
               >
                 x
               </button>
+          
             </div>
           ))}
         </div>
+
       </div>
     </div>
   );

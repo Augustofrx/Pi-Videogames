@@ -17,7 +17,7 @@ export default function Details(props) {
     dispatch(getDetails(id));
     return () => dispatch(resetDetail());
   }, [dispatch, id]);
-  window.scrollTo(0, 0);
+   window.scrollTo(0, 0);
   return (
     <div className={style.container} id="container">
       

@@ -4,13 +4,17 @@
     background:linear-gradient(-180deg, rgba(7,7,36,1) 0%, rgb(95, 0, 0) 50%, rgba(7,7,36,1) 100%);
     height: 663px;
     width: 1366px;
+
 }
 
 .title {
+    position: relative;
     font-family: 'Courier New', Courier, monospace;
     font-size: 60px;
     color: white;
     text-shadow: 5px 5px 5px black;
+    z-index: 2;
+
 }
 
 
@@ -22,12 +26,45 @@
     top: 80px;
     left: 400px;
     border-radius: 50px;
+    overflow: hidden;
+}
+
+.transparentForm::before {
+    content: '';
+    position: absolute;
+    left: -250px;
+    top: -250px;
+    width: 1100px;
+    height: 1100px;
+    background: linear-gradient(rgb(93, 1, 136), rgb(255, 0, 60), rgb(93, 1, 136), rgb(255, 0, 60),
+                              rgb(93, 1, 136), rgb(255, 0, 60), rgb(93, 1, 136), rgb(255, 0, 60));
+    animation: animate 5s linear 0s infinite;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+.transparentForm::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 50px;
+    background:linear-gradient(-180deg, rgba(7,7,36,1) 0%, rgb(95, 0, 0) 50%, rgba(7,7,36,1) 100%);
+    overflow: hidden;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .BackToHomeDiv {
     position: relative;
     right: 550px;
     top: 20px;
+
 }
 
 .BackToHomeButton {
@@ -39,6 +76,7 @@
     font-weight: 700;
     background-color: rgba(255,0,60,1);
     box-shadow: 5px 5px 5px black;
+   
 }
 
 .BackToHomeButton:hover {
@@ -47,7 +85,8 @@
 
 .nameDiv {
 position: relative;
-top: -30px
+top: -30px;
+z-index: 2;
 }
 
 .nameInput{
@@ -62,7 +101,8 @@ top: -30px
 
 .descriptionDiv {
     position: relative;
-    top: -30px
+    top: -30px;
+    z-index: 2;
     }
 
 .descriptionInput {
@@ -76,7 +116,8 @@ top: -30px
 }
 .dateDiv {
     position: relative;
-    top: -30px
+    top: -30px;
+    z-index: 2;
     }
 
 .dateInput {
@@ -90,7 +131,8 @@ top: -30px
 }
 .ratingDiv {
 position: relative;
-top: -30px
+top: -30px;
+z-index: 2;
 }
 .ratingInput {
     border-radius: 5px;
@@ -103,7 +145,8 @@ top: -30px
 }
 .imageDiv {
     position: relative;
-    top: -30px
+    top: -30px;
+    z-index: 2;
     }
 .imageInput {
     border-radius: 5px;
@@ -121,6 +164,7 @@ font-weight: bold;
 position: absolute;
 bottom: 183px;
 left: 158px;
+z-index: 2;
 }
 
 .labelPlatforms {
@@ -129,6 +173,7 @@ left: 158px;
 bottom: 183px;
 left: 295px;
 color:white;
+z-index: 2;
 }
 
 .selectGenres {
@@ -145,6 +190,7 @@ color:white;
     margin-bottom: 10px;  
     text-align-last: center;
     box-shadow: inset 2px 2px 5px black;
+    z-index: 2;
 }
 
 .selectPlatforms {
@@ -161,6 +207,7 @@ color:white;
     margin-bottom: 10px;  
     text-align-last: center;
     box-shadow: inset 2px 2px 5px black;
+    z-index: 2;
 }
 
 .divRenderGenres {
@@ -170,6 +217,7 @@ color:white;
     justify-content: center;
     color: white;
     font-weight: bold;
+    z-index: 2;
 }
 .divRenderPlatforms {
     display: flex;
@@ -177,7 +225,8 @@ color:white;
     bottom: 20px;
     justify-content: center; 
     color: white;
-    font-weight: 600; 
+    font-weight: 600;
+    z-index: 2; 
 }
 
 .buttonXgenres{
@@ -191,6 +240,7 @@ color:white;
     color: rgba(255,0,60,1); 
     background-color: thistle;
     text-align-last: auto;
+    z-index: 2;
 }
 .buttonXplatforms {
     position: relative;
@@ -203,9 +253,11 @@ color:white;
     color: rgba(255,0,60,1); 
     background-color: thistle;
     text-align-last: auto;
+    z-index: 2;
 }
 .buttonXplatforms:hover {
     background-color: rgba(216, 191, 216, 0.507);
+    
 }
 .buttonXgenres:hover {
     background-color: rgba(216, 191, 216, 0.507);
@@ -213,8 +265,8 @@ color:white;
 
 .buttonDone{
     position: absolute;
-    right: 25px;
-    bottom: 20px;
+    right: 30px;
+    bottom: 30px;
     width: 100px;
     height: 50px;
     padding: 8px;
@@ -225,6 +277,7 @@ color:white;
     font-weight: 700;
     background-color: rgba(255,0,60,1);
     box-shadow: 5px 5px 5px black;
+    z-index: 2;
 }
 .buttonDone:hover {
     background-color: rgb(143, 0, 199); 
