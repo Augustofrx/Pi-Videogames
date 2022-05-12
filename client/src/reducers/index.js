@@ -87,8 +87,8 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         videogames: orderByRating.sort((a, b) => {
-          if(a.name > b.name) return 1;
-          if(a.name < b.name) return -1;
+          if(a.rating > b.rating) return -1;
+          if(a.rating < b.rating) return 1;
           return 0
         })
       };
@@ -96,21 +96,22 @@ function rootReducer(state = initialState, action) {
         return {
           ...state,
           videogames: orderByRating.sort((a, b) => {
-           if(a.name > b.name) return -1;
-           if(a.name < b.name) return 1;
+           if(a.rating > b.rating) return 1;
+           if(a.rating < b.rating) return -1;
            return 0
         })
        }
        case "None":
-         return {
-           ...state,
-           videogames: [...state.allVideogames]
-         }
-         default:
-         return {
-           ...state
-         }
+        return {
+          ...state,
+          videogames: [...state.allVideogames]
         }
+        default:
+        return {
+          ...state
+        }
+        }
+
     case "FILTER_BY_GENRES":
       const AllVideogames = state.allVideogames;
       const genresFiltered =

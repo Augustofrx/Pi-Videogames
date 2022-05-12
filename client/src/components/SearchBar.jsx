@@ -3,6 +3,9 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getVideogamesName } from "../acctions";
 import style from './CSS/SearchBar.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+
 
 export default function SearchBar() {
  const dispatch = useDispatch()
@@ -28,7 +31,9 @@ export default function SearchBar() {
          value={name}
          placeholder='Search a videogame'
          onChange={handleInputChange}/>
-         <button className={style.buttonSearch}>Search</button>
+         <button className={style.buttonSearch}>
+         <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </button>
          </form>
      </div>
  )

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetails, resetDetail } from "../acctions";
 import { useEffect } from "react";
@@ -7,16 +7,16 @@ import style from "./CSS/Detail.module.css";
 import Loader from './Images/Loader.gif'
 import Megaman from './Images/megaman.gif'
 
-export default function Details(props) {
+export default function Details() {
   const dispatch = useDispatch();
   const myVideogame = useSelector((state) => state.detail);
 
-  const id = props.match.params.id
+  const params = useParams()
   
   useEffect(() => {
-    dispatch(getDetails(id));
+    dispatch(getDetails(params.id));
     return () => dispatch(resetDetail());
-  }, [dispatch, id]);
+  }, [dispatch, params.id]);
    window.scrollTo(0, 0);
   return (
     <div className={style.container} id="container">

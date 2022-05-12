@@ -17,6 +17,9 @@ import SearchBar from "./SearchBar";
 import Loader from "./Images/Loader.gif";
 import Megaman from "./Images/megaman.gif";
 import sadCat from './Images/sadCat.gif'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRotateLeft } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -86,7 +89,7 @@ export default function Home() {
         </div>
         <div className={style.divReset}>
             <button className={style.buttonReset} onClick={e => handleResetsFilters(e)}>
-              Reset Search
+            <FontAwesomeIcon icon={faArrowRotateLeft} />
             </button>
         </div>
         <div className={style.filtersCss}>

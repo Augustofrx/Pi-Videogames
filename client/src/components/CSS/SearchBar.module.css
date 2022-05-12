@@ -1,12 +1,12 @@
 .GeneralSearch {
     position: absolute;
     top: 20px; 
-    left: 120px;
+    left: 8.7em;
     
 }
 
 .SearchInput {
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: bold;
     border: none;
     font-size: 15px;
@@ -18,9 +18,13 @@
     
 }
 
+.SearchInput::placeholder {
+    color: white;
+}
+
 .buttonSearch {
     position: relative;
-    left: 4px;
+    left: .2em;
     border-radius: 5px;
     bottom: 1px;
     color: white;

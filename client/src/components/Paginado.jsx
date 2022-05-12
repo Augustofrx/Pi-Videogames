@@ -8,7 +8,7 @@ export default function Paginado({videogamesPerPage, allVideogames, paginado}) {
  }
  return(
      <nav>
-         <div>
+         <div className={Style.numbersDiv}>
              {
                  pageNumbers?.map(number =>(
                      <button className={Style.numbers} key={number} onClick={() => paginado(number)}>{number}</button>
