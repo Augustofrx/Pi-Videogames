@@ -90,7 +90,7 @@ left: 8.8em;
 }
 .createVideogame {
     position: absolute;
-    left: 890px;
+    left: 920px;
     top: 25px;
     word-spacing: 5px;
 }
@@ -110,7 +110,7 @@ left: 8.8em;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
     background: rgb(20, 0, 32) ;
 }
 
