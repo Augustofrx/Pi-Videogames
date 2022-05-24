@@ -54,7 +54,7 @@ export default function Details() {
               Rating: {myVideogame.rating}
             </h5>
           </div>
-          <div>
+          <div className={style.backgroundBlurDiv}>
             <img className={style.backgroundBlur} src={myVideogame.image} alt="BackgroundImage.jpg"/>
           </div>
           </div>
