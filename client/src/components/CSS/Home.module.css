@@ -97,6 +97,7 @@ left: 8.8em;
 .createVideogame a {
     font-family: monospace;
     color: snow;
+    width: 160px;
     font-size: 18px;
     font-weight: bold;
     padding: 5px;
