@@ -12,6 +12,7 @@
     align-content: space-evenly;
     align-items: center;
     margin-left: 100px;
+    padding-bottom: 2em;
 }
 .parent a {
 width: 250px;
