@@ -64,11 +64,13 @@ export default function Details() {
      <div>   <img src={Loader} alt="loading.gif" /></div>
      </div>
         )}
-      <div className={style.goBackDiv}>
+        {myVideogame?(
+          <div className={style.goBackDiv}>
       <Link to="/home">
         <button className={style.GoBackButton}>Go Back</button>
       </Link>
       </div>
+          ) : ''}
     </div>
   );
 }
