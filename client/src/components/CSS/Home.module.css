@@ -12,8 +12,10 @@
     align-content: space-evenly;
     align-items: center;
     margin-left: 100px;
-   
-   
+}
+.parent a {
+width: 250px;
+height: 350px;
 }
 .filtersCss {
     display: flex;
