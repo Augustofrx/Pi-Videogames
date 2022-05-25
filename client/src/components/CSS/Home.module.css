@@ -167,4 +167,18 @@ left: 6.6em;
         left: 1010px;
     }
 
+    
+}
+@media (min-width: 1920px) {
+    .createVideogame{
+        left: 1425px;
+    }
+
+    .divReset {
+        left: 15.9em;
+    }
+
+    .parent {
+        margin-left: 250px;
+    }
 }

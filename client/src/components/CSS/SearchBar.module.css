@@ -35,3 +35,10 @@
     height: 29px; 
    
 }
+
+
+@media (min-width: 1920px) {
+    .GeneralSearch {
+        left: 18em;
+    }
+ }

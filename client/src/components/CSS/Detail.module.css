@@ -174,3 +174,26 @@
   position: relative;
   top: 50px;
 }
+
+
+@media (min-width: 1920px) {
+    .titleDiv {
+      left: 480px;
+    }
+
+    .genresDiv, .descriptionDiv, .platformsDiv {
+      left: 460px;
+    }
+
+    .goBackDiv {
+      left: 1305px;
+    }
+
+    .ratingDiv {
+      left: 860px;
+    }
+
+    .releasedDiv{
+      left: 460px;
+    }
+ }

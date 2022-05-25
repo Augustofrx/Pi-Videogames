@@ -27,3 +27,9 @@
     background-color: rgba(63, 63, 63, 0.233);
     color: burlywood;
 }
+
+@media (min-width: 1920px) {
+    .numbersDiv{
+        left: 842px;
+    }
+}
