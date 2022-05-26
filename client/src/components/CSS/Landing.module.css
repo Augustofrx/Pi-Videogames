@@ -44,8 +44,10 @@
 
   @media (min-width: 1440px){
     .ButtonStart {
-      right: 3.3em;
-      font-size: 30px;
+      right: 3em;
+      font-size: 28px;
       border-radius: 6px;
     }
    }
+
+  

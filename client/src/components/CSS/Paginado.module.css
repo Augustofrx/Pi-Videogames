@@ -28,13 +28,15 @@
     color: burlywood;
 }
 
-@media (min-width: 1920px) {
-    .numbersDiv{
-        left: 842px;
-    }
-}
+
+
 @media (min-width: 1440px){
     .numbersDiv {
         left: 575px;
+    }
+}
+@media (min-width: 1920px) {
+    .numbersDiv{
+        left: 842px;
     }
 }
