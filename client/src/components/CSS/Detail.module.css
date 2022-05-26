@@ -203,3 +203,13 @@
       left: 460px;
     }
  }
+
+ @media (min-width: 1440px){ 
+   .titleDiv, .genresDiv, .platformsDiv, .descriptionDiv, .releasedDiv {
+     left: 230px;
+   }
+.goBackDiv {
+  left: 1135px;
+}
+
+ }

@@ -33,14 +33,7 @@
   cursor: pointer;
 }
 
-/* 
-@media (min-width:1366px ) {
-  .ButtonStart {
-    top: -.3em;
-    left: -3.5em;
-    font-size: 26px;
-  }
-} */
+
 
   @media (min-width: 1920px) {
     .ButtonStart {
@@ -48,3 +41,11 @@
       border-radius: 6px;
     }
   }
+
+  @media (min-width: 1440px){
+    .ButtonStart {
+      right: 3.3em;
+      font-size: 30px;
+      border-radius: 6px;
+    }
+   }

@@ -1,187 +1,209 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;600&display=swap");
 
 .parent {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    column-gap: 50px;
-    grid-row-gap: 30px;
-    justify-content: space-evenly;
-    justify-content: center;
-    align-content: space-evenly;
-    align-items: center;
-    margin-left: 100px;
-    padding-bottom: 2em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  column-gap: 50px;
+  grid-row-gap: 30px;
+  justify-content: space-evenly;
+  justify-content: center;
+  align-content: space-evenly;
+  align-items: center;
+  margin-left: 100px;
+  padding-bottom: 2em;
 }
 .parent a {
-width: 250px;
-height: 350px;
+  width: 250px;
+  height: 350px;
 }
 .filtersCss {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .Home {
-    background: rgb(20, 0, 32);
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    position: relative;
-    background-size:auto;
-    background-repeat: no-repeat;
-    background-position: center;
+  background: rgb(20, 0, 32);
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .nav {
-    background: linear-gradient(-180deg, rgba(7,7,36,1) 10%, rgb(95, 0, 0) 100%);
-    margin-bottom: 10px;
-    height: 110px;
+  background: linear-gradient(
+    -180deg,
+    rgba(7, 7, 36, 1) 10%,
+    rgb(95, 0, 0) 100%
+  );
+  margin-bottom: 10px;
+  height: 110px;
 }
 
 .alphabeticalOrder {
-position: relative;
-top: 60px;
-margin-right: 4px;
-left: 8.8em;
+  position: relative;
+  top: 60px;
+  margin-right: 4px;
+  left: 8.8em;
 }
 
 .OrderByRating {
-    position: relative;
-    top: 80px;
-    margin-right: 4px;
-    right: 5px;
+  position: relative;
+  top: 80px;
+  margin-right: 4px;
+  right: 5px;
 }
 
 .filterByGenres {
-    position: relative;
-    top: 60px;
-    margin-right: 4px;
-    right: 5px;
+  position: relative;
+  top: 60px;
+  margin-right: 4px;
+  right: 5px;
 }
 
 .filterByOrigin {
-    position: relative;
-    top: 80px;
-    right: 9.3em;
+  position: relative;
+  top: 80px;
+  right: 9.3em;
 }
 .labels {
-    color: white;
-    font-weight: bold;
-    margin-left: 2px;
-    font-family: 'Kanit', sans-serif;
-    font-weight: 400;
+  color: white;
+  font-weight: bold;
+  margin-left: 2px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
 }
 
 .selects {
-    border-radius: 5px;
-    border-color: rgb(68, 0, 6);
-    width: 88px;
-    background-color: rgba(255,0,60,1);
-    color: seashell;
-    font-weight: 700;
+  border-radius: 5px;
+  border-color: rgb(68, 0, 6);
+  width: 88px;
+  background-color: rgba(255, 0, 60, 1);
+  color: seashell;
+  font-weight: 700;
 }
 
 .LoaderGifMegaman {
-   position: relative;
-   top: 80px;
-   left: 0px;
+  position: relative;
+  top: 80px;
+  left: 0px;
 }
 
 .LoaderGif {
-    position: relative;
-    top: -50px;
-    left: 0px;
+  position: relative;
+  top: -50px;
+  left: 0px;
 }
 .createVideogame {
-    position: absolute;
-    top: 25px;
-    word-spacing: 5px;
+  position: absolute;
+  top: 25px;
+  word-spacing: 5px;
 }
 .createVideogame a {
-    font-family: monospace;
-    color: snow;
-    width: 160px;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 5px;
-    background-color: rgba(255,0,60,1);
-    border-radius: 5px;
-    box-shadow: 3px 3px 3px rgba(0,0,0,1);
+  font-family: monospace;
+  color: snow;
+  width: 160px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px;
+  background-color: rgba(255, 0, 60, 1);
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 1);
 }
 
 .createVideogame:hover a {
-    background-color: rgba(255, 0, 60, 0.548);
+  background-color: rgba(255, 0, 60, 0.548);
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
-    background: rgb(20, 0, 32) ;
+  width: 5px;
+  background: rgb(20, 0, 32);
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background-color: rgba(180, 180, 180, 0.2);
+  border-radius: 5px;
+  background-color: rgba(180, 180, 180, 0.2);
 }
 
 .noResultsDiv {
-    position: relative;
-    background-size:auto;
-    background-repeat: no-repeat;
-    background-position: center;
-width: auto;
-height: 100vh;
-    color: azure;
+  position: relative;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: auto;
+  height: 100vh;
+  color: azure;
 }
 
 .noResultsDiv h3 {
-    position: relative;
-    left: 370px;
-    top: 100px;
+  position: relative;
+  left: 370px;
+  top: 100px;
 }
 
 .sadCatGif {
-    position: relative;
-    left: 360px;
-    top: 100px;
+  position: relative;
+  left: 360px;
+  top: 100px;
 }
 
-
-.divReset{
-position: absolute;
-width: 30px;
-top: 20px;
-left: 6.6em; 
+.divReset {
+  position: absolute;
+  width: 30px;
+  top: 20px;
+  left: 6.6em;
 }
 
 .buttonReset {
-    width: 30px;
-    height: 30px;
-    color: white;
-    font-weight: bold;
-    border: none;
-    background-color: rgba(255,0,60,1); 
-    border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  background-color: rgba(255, 0, 60, 1);
+  border-radius: 5px;
 }
 
-@media (min-width:1366px ) {
+@media (min-width: 1366px) {
+  .createVideogame {
+    left: 1010px;
+  }
+}
+
+
+@media (min-width: 1440px){
     .createVideogame {
-        left: 1010px;
+        left:1055px
     }
+ .alphabeticalOrder {
+     left: 7.4em;
+ }
+ .OrderByRating {
+     right: 29px;
+ }
+ .filterByGenres {
+     right: 30px;
+ }
+ .filterByOrigin {
+     right: 10.85em;
+ }
 
-    
+
 }
+
 @media (min-width: 1920px) {
-    .createVideogame{
-        left: 1425px;
-    }
+  .createVideogame {
+    left: 1425px;
+  }
 
-    .divReset {
-        left: 15.9em;
-    }
+  .divReset {
+    left: 15.9em;
+  }
 
-    .parent {
-        margin-left: 250px;
-    }
+  .parent {
+    margin-left: 250px;
+  }
 }
