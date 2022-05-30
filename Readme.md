@@ -2,6 +2,7 @@
  <h3>El objetivo del mismo era realizar una pagina en la cual se muestre un catalogo de 100 juegos paginados de a 15 por pagina.</h3> <h3>Los cuales se puedan ordenar alfabéticamente y por rating, como así también filtrar por genero y por origen.</h3> <h3>También incluye una barra de búsqueda por coincidencia de nombre y un formulario de creación de un nuevo juego.</h3> <h3>Cada juego permite ver sus detalles, tanto los obtenidos de la API, como los creados por el usuario.</h3>
 <br>
 <h3>Espero te guste 😄🌟</h3>
+<h5>https://proyecto-videojuegos.vercel.app/</h5>
 <br>
 <h2>Las tecnologías empleadas para este proyecto fueron:</h2>
 <h3>-JavaScript</h3>
