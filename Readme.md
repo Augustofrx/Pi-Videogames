@@ -4,7 +4,8 @@
 
 # Visitá mi proyecto aquí 😄🌟
 
-<h5>https://proyecto-videojuegos.vercel.app/</h5>
+<h3>https://proyecto-videojuegos.vercel.app/</h3>
+
 <br>
 <h2>Las tecnologías empleadas para este proyecto fueron:</h2>
 <h3>-JavaScript</h3>
