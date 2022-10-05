@@ -10,6 +10,7 @@ export default function VideogameCreate() {
   const navigate = useNavigate();
   const genres = useSelector((state) => state.genres);
   const videogames = useSelector((state) => state.videogames);
+  const isErrors = useSelector((state) => state.errors);
   let platforms = [];
   if (videogames) {
     platforms = videogames.map((game) =>
@@ -93,24 +94,24 @@ export default function VideogameCreate() {
     }
   };
 
-  const validateSelects = (e) => {
-    const { name, value } = e.target;
-    setInput({
-      ...input,
-      [name]: value,
-    });
-    if ((input.genres).length === 0 || (input.platforms).length === 0) {
-      setErrors({
-        ...errors,
-        [name]: "You must put almost one genre and platform",
-      });
-    } else {
-      setErrors({
-        ...errors,
-        [name]: "",
-      });
-    }
-  };
+  // const validateSelects = (e) => {
+  //   const { name, value } = e.target;
+  //   setInput({
+  //     ...input,
+  //     [name]: value,
+  //   });
+  //   if ((input.genres).length === 0 || (input.platforms).length === 0) {
+  //     setErrors({
+  //       ...errors,
+  //       [name]: "You must put almost one genre and platform",
+  //     });
+  //   } else {
+  //     setErrors({
+  //       ...errors,
+  //       [name]: "",
+  //     });
+  //   }
+  // };
 
   const validateRating = (e) => {
     const { name, value } = e.target;
@@ -149,17 +150,39 @@ export default function VideogameCreate() {
     }
   }
 
+  const checkInfo = () => {
+    if (
+      input.genres.length > 0 &&
+      input.platforms.length > 0 &&
+      input.description !== "" &&
+      input.name !== "" &&
+      input.rating !== "" &&
+      input.released !== ""
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const checkErrors = (e) => {
+    e.preventDefault();
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "You must complete all fields before continuing and all the fields must be completed correctly!",
+    });
+  };
+
   function handleSubmit(e) {
     e.preventDefault();
     if (
-      !Object.values(input).filter((e, i) => e === "" && i !== 1).length ===
-        0 &&
       !errors.name &&
       !errors.description &&
       !errors.released &&
       !errors.rating &&
-      !errors.platforms &&
-      !errors.genres
+      input.genres.length !== 0 &&
+      input.platforms.length !== 0
     ) {
       dispatch(postVideogame(input));
       Swal.fire({
@@ -167,6 +190,7 @@ export default function VideogameCreate() {
         title: "Excellent!",
         text: "Videogame created successfully!",
       });
+
       setInput({
         name: "",
         description: "",
@@ -211,7 +235,12 @@ export default function VideogameCreate() {
       </Link>
       <div className={style.transparentForm}>
         <h1 className={style.title}>Create your videogame!</h1>
-        <form className={style.form} onSubmit={(e) => handleSubmit(e)}>
+        <form
+          className={style.form}
+          onSubmit={(e) => {
+            checkInfo() ? handleSubmit(e) : checkErrors(e);
+          }}
+        >
           <div className={style.nameDiv}>
             <input
               className={style.nameInput}
@@ -286,7 +315,6 @@ export default function VideogameCreate() {
           <select
             className={style.selectGenres}
             onChange={(e) => {
-              validateSelects(e);
               handleSelectGenres(e);
             }}
           >
@@ -304,7 +332,6 @@ export default function VideogameCreate() {
           <select
             className={style.selectPlatforms}
             onChange={(e) => {
-              validateSelects(e);
               handleSelectPlatforms(e);
             }}
           >

@@ -103,3 +103,10 @@ export function filterByOrigin(payload) {
   };
 }
 
+export function setErrorsBtn(payload) {
+  return {
+    type: 'ERRORS',
+    payload
+  }
+}
+

@@ -3,7 +3,8 @@ let initialState = {
   allVideogames: [],
   genres: [],
   detail: null,
-  loading: false
+  loading: false,
+  errors: true
 };
 
 function rootReducer(state = initialState, action) {
@@ -138,6 +139,11 @@ function rootReducer(state = initialState, action) {
         videogames:
           action.payload === "All" ? state.allVideogames : filterByOrigin,
       };
+      case 'ERRORS':
+        return {
+          ...state,
+          errors: false
+        }
     default:
       return state;
   }
