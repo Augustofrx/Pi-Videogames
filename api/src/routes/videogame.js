@@ -35,15 +35,17 @@ const gameInDb = async (id) => {
       const allId = await axios.get(
         `https://api.rawg.io/api/games/${idVideogame}?key=${YOUR_API_KEY}`
       );
+      const {data} = allId;
+      const {id, name, background_image, description, released, rating, platforms, genres} = data;
       res.json( {
-        id: allId.data.id,
-        name: allId.data.name,
-        image: allId.data.background_image,
-        description: allId.data.description,
-        released: allId.data.released,
-        rating: allId.data.rating,
-        platforms: allId.data.platforms.map((e) =>  e.platform.name),
-        genres: allId.data.genres.map((e) => {
+        id: id,
+        name: name,
+        image: background_image,
+        description: description,
+        released: released,
+        rating: rating,
+        platforms: platforms.map((e) =>  e.platform.name),
+        genres: genres.map((e) => {
           return {
               id: e.id,
               name: e.name
